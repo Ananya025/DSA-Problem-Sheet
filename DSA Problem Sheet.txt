@@ -1,0 +1,215 @@
+Max and min element in an array
+
+int[] arr = { 20, 2, 34, 6, 7, 76};
+        int max = arr[0];
+        int min = arr[0];
+        
+        
+        foreach(int i in arr)
+        {
+            if(i>max) max = i;
+            else if(i<min) min = i;
+        }
+        Console.WriteLine (max);
+        Console.WriteLine (min);
+
+-----------------------------------------
+
+merge 2 sorted array
+
+using System;
+using System.Linq;
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        int[] arr1 = { 20, 2, 34, 6, 7, 76};
+        int[] arr2 = { 16, 2, 3, 6, 7, 75};
+        int[] merged = arr1.Concat(arr2).OrderBy(x=>x).ToArray();
+        
+        Console.WriteLine (string.Join(",",merged));
+        
+    }
+}
+
+---------------------------------------------------------
+Count frequency of each element in array
+
+---------------------------------------------------------
+Find Missing number in the sequence
+
+using System;
+using System.Linq;
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        int[] arr = { 1, 2, 4, 5, 6};
+        int n = arr.Length+1;
+        int expectedSum = (n*(n+1))/2;
+        int actualSum = arr.Sum();
+        int missingElement = expectedSum - actualSum;
+        Console.WriteLine(missingElement);
+    }
+}
+
+---------------------------------------------------------------------
+
+Rotate an Array by K positions
+
+using System;
+using System.Linq;
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        int[] a = {1, 7, 4, 8, 9};
+        int k = 2;
+        int l = a.Length;
+        k = k % l;
+        int[] rotated = a.Skip(l-k).Concat(a.Take(l-k)).ToArray();
+        Console.WriteLine (string.Join(",",rotated));
+    }
+}
+
+----------------------------------------------------------------------------------
+
+Remove Duplicates from an Array
+
+using System;
+using System.Linq;
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        int[] a = {1, 7, 4, 8, 9, 7, 4, 1};
+        int[] unique = a.Distinct().ToArray();
+        Console.WriteLine (string.Join(",",unique));
+    }
+}
+
+--------------------------------------------------------------------------------------
+
+Dupliacte element in array
+
+using System;
+using System.Linq;
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        int[] a = {1, 7, 4, 8, 9, 7, 4, 1};
+        int l = a.Length;
+        int[] unique = a.Distinct().ToArray();
+        int uniqueElements = a.Distinct().Count();
+        bool hasDuplicate = l != uniqueElements;
+        Console.WriteLine (string.Join(",",unique));
+        Console.WriteLine(uniqueElements);
+        Console.WriteLine(l);
+        Console.WriteLine ("Has Duplicate?" + hasDuplicate);
+    }
+}
+-----------------------------------------------------------------------------------------
+Need to check array rotation, window problems, string problems, sql questions on priority
+
+--------------------------------------------------------------------------------------------
+
+//Palindrome String
+
+using System;
+using System.Linq;
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        string s = Console.ReadLine();
+        int l = s.Length;
+        char[] result = new char[l];
+        for(int i=0; i<l; i++)
+        {
+            result[i] = s[l-1-i];
+        }
+        Console.WriteLine ((new string(result) == s) ? "Palindrome String" : "Not Palindrome String");
+    }
+}
+---------------------------------------------------------------------------------------------------------------
+
+// Online C# Editor for free
+// Write, Edit and Run your C# code using C# Online Compiler
+
+using System;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        string s = "Madam";
+        s = s.ToLower();
+        int left = 0, right = s.Length -1, c = 0;
+        bool isPalindrome = true;
+        while(left<right)
+        {
+            if(s[left] != s[right]) 
+            {
+                isPalindrome = false;
+                break;
+            }
+            left ++;
+            right--;
+            
+        }
+        Console.WriteLine(isPalindrome ? "Palindrome"  : "Not Palindrome");
+    }
+}
+
+-----------------------------------------------------------------------------------------------------------
+
+// Online C# Editor for free
+// Write, Edit and Run your C# code using C# Online Compiler
+//'abba' 'bbaa'
+using System;
+//using 
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        string s1 = "listen";
+        string s2 = "silent";
+        bool IsAnagram = true;
+        if(s1.Length!=s2.Length) 
+            IsAnagram = false;
+        
+        // convert the string to char array, so that we can
+        //get all the characters
+        char[] a1 = s1.ToCharArray();
+        char[] a2 = s2.ToCharArray();
+        Array.Sort(a1);
+        Array.Sort(a2);
+        if(new string(a1) == new string(a2))
+            IsAnagram = true;
+        Console.WriteLine (IsAnagram ? "Anagram" : "Not Anagram");
+    }
+}
+
+---------------------------------------------------------------------------------------------------------------------
+
+//Length of the string without using strlen() function 
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        string s = Console.ReadLine();
+        //char[]  s = s1.ToCharArray();
+        int c = 0;
+        foreach(char i in s)
+        {
+            c+=1;
+        }
+        Console.WriteLine (c);
+    }
+}
+
+
+------------------------------------------------------------------------------------------------------------------------------
+
+
